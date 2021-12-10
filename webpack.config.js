@@ -16,8 +16,10 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     static: './dist',
-    devMiddleware: {
-      writeToDisk: true
+    open: {
+      app: {
+        name: 'firefox-developer-edition',
+      }
     }
   },
   module: {
