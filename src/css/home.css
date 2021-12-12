@@ -57,13 +57,13 @@ main {
 }
 
 .restaurant-description {
+  text-align: center;
   animation: fade-in 1.5s linear forwards;
 }
 
 .restaurant-description p {
   color: var(--light-color);
   font-size: 1.1rem;
-  text-align: center;
   text-shadow: 0 0 2px var(--dark-color);
   margin-bottom: 1.5rem;
 }
@@ -155,7 +155,7 @@ main {
       max-width: 650px;
     }
 
-    .restaurant-description p {
+    .restaurant-description {
       text-align: left;
     }
 }
