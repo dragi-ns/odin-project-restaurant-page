@@ -73,6 +73,10 @@ main {
   animation: shake 4.72s 3s cubic-bezier(.36,.07,.19,.97) infinite;
 }
 
+.btn.call-to-action span:first-child {
+  margin-right: .25rem;
+}
+
 @keyframes animate-dark {
   0% {
     fill: transparent;
