@@ -4,20 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Page | Odin Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
+          integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <span class="icon">
-                <img src="./images/logo.svg" alt="kuvarska kapa">
-            </span>
-            <span class="text">La Petite Cuisine</span>
+        <div class="container">
+            <div class="logo">
+                <span class="icon">
+                    <%= require('!svg-inline-loader!./images/logo.svg') %>
+                </span>
+                <span class="text">La Petite Cuisine</span>
+            </div>
+            <nav>
+                <span class="btn active">
+                    <span><i class="fas fa-home"></i></span>
+                    <span>Početna</span>
+                </span>
+                <span class="btn">
+                    <span><i class="fas fa-utensils"></i></span>
+                    <span>Meni</span>
+                </span>
+                <span class="btn">
+                    <span><i class="fas fa-address-book"></i></span>
+                    <span>Kontakt</span>
+                </span>
+            </nav>
         </div>
-        <nav>
-            <a href="#">Početna</a>
-            <a href="#">Meni</a>
-            <a href="#">Kontakt</a>
-        </nav>
     </header>
+    <main>
+        <div id="content">
+            <div class="container"></div><!-- .container -->
+        </div><!-- #content -->
+    </main>
+    <footer>
+        <p>
+            &copy; 2021 <a href="https://github.com/dragi-ns/odin-project-restaurant-page" target="_blank">dragi-ns</a>
+        </p>
+    </footer>
 </body>
 </html>

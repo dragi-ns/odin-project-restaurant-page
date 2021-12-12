@@ -1,0 +1,157 @@
+main {
+  background-image: url('../images/home-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+#content {
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem 1rem;
+  background-color: rgba(51, 30, 3, .6);
+}
+
+#content .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.restaurant-illustration {
+  width: 100%;
+  max-width: 500px;
+}
+
+.restaurant-illustration #fork {
+  stroke-dasharray: 1475.99;
+  stroke-dashoffset: 1475.99;
+  animation: animate-dark 1.5s linear forwards;
+}
+
+.restaurant-illustration #knife {
+  stroke-dasharray: 836.47;
+  stroke-dashoffset: 836.47;
+  animation: animate-dark 1.5s linear forwards;
+}
+
+.restaurant-illustration #plate {
+  stroke-dasharray: 1885.22;
+  stroke-dashoffset: 1885.22;
+  animation: animate-dark 1.5s linear forwards;
+}
+
+.restaurant-illustration #chef_hat {
+  stroke-dasharray: 450;
+  stroke-dashoffset: 450;
+  animation: animate-light 1.5s 1.5s linear forwards;
+}
+
+.restaurant-illustration #restourant_name {
+  stroke-dasharray: 560;
+  stroke-dashoffset: 560;
+  animation: animate-light 1.5s 1.5s linear forwards;
+}
+
+.restaurant-description {
+  animation: fade-in 1.5s linear forwards;
+}
+
+.restaurant-description p {
+  color: var(--light-color);
+  font-size: 1.1rem;
+  text-align: center;
+  text-shadow: 0 0 2px var(--dark-color);
+  margin-bottom: 1.5rem;
+}
+
+.btn.call-to-action {
+  display: inline-block; 
+  animation: shake 4.72s 3s cubic-bezier(.36,.07,.19,.97) infinite;
+}
+
+@keyframes animate-dark {
+  0% {
+    fill: transparent;
+  }
+
+  80% {
+    fill: transparent;
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    fill: var(--dark-color);
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animate-light {
+  0% {
+    fill: transparent;
+  }
+
+  80% {
+    fill: transparent;
+    stroke-dashoffset: 150;
+  }
+
+  100% {
+    fill: var(--light-color);
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0) }
+  1.78571% { transform: translate(5px, 0) }
+  3.57143% { transform: translate(0, 0) }
+  5.35714% { transform: translate(5px, 0) }
+  7.14286% { transform: translate(0, 0) }
+  8.92857% { transform: translate(5px, 0) }
+  10.71429% { transform: translate(0, 0) }
+  100% { transform: translate(0, 0) }
+}
+
+@media screen and (min-width: 768px) {
+  .restaurant-description p {
+    font-size: 1.5rem;
+  }
+
+  .call-to-action .btn {
+    font-size: 1.3rem;
+  }
+}
+
+
+@media screen and (min-width: 992px) {
+    #content .container {
+      flex-direction: row-reverse;
+    }
+
+    .restaurant-illustration,
+    .restaurant-description {
+      flex: 1;
+    }
+
+    .restaurant-illustration {
+      max-width: 650px;
+    }
+
+    .restaurant-description p {
+      text-align: left;
+    }
+}

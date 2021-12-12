@@ -1,3 +1,5 @@
 import '../css/main.css';
 
-console.log('TODO');
+import homeTabElements from './home.js';
+
+document.querySelector('#content .container').append(...homeTabElements);
