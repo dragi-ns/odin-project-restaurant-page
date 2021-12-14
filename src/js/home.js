@@ -1,20 +1,20 @@
 import '../css/home.css';
 import illustration from '../images/home-illustration.svg';
 
-function restaurantIllustration() {
-    const container = document.createElement('div');
-    container.classList.add('restaurant-illustration');
-    container.innerHTML = illustration;
-    return container;
+function createRestaurantIllustration() {
+    const restaurantIllustration = document.createElement('div');
+    restaurantIllustration.classList.add('restaurant-illustration');
+    restaurantIllustration.innerHTML = illustration;
+    return restaurantIllustration;
 }
 
-function restaurantDescription() {
-    const container = document.createElement('div');
-    container.classList.add('restaurant-description');
+function createRestaurantDescription() {
+    const restaurantDescriptionContainer = document.createElement('div');
+    restaurantDescriptionContainer.classList.add('restaurant-description');
 
     const description = document.createElement('p');
     description.textContent = 'Restorančić inspirisan francuskom kuhinjom. Čuveni potaž, baget, mirisna peciva, sendviči, omleti. Stalna ponuda nekoliko tipičnih francuskih jela, dnevni meniji u mesnoj i biljnoj verziji, palačinke...';
-    container.appendChild(description);
+    restaurantDescriptionContainer.appendChild(description);
 
     const callToAction = document.createElement('a');
     callToAction.classList.add('btn', 'call-to-action');
@@ -27,9 +27,14 @@ function restaurantDescription() {
     const callToActionText = document.createElement('span');
     callToActionText.textContent = 'Pozovite nas';
     callToAction.appendChild(callToActionText);
-    container.appendChild(callToAction);
+    restaurantDescriptionContainer.appendChild(callToAction);
 
-    return container;
+    return restaurantDescriptionContainer;
 }
 
-export default [restaurantIllustration(), restaurantDescription()];
+function loadHomeContent(contentContainer) {
+    contentContainer.appendChild(createRestaurantIllustration());
+    contentContainer.appendChild(createRestaurantDescription())
+}
+
+export default loadHomeContent;

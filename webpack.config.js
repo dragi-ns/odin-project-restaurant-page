@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 module.exports = {
   mode: 'development', // production
@@ -11,6 +12,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].bundle.js',
+    chunkFilename: 'js/[id].[contenthash].js',
     clean: true,
   },
   devtool: 'inline-source-map',
@@ -43,7 +45,19 @@ module.exports = {
   },
   optimization: {
     minimizer: [
-      new CssMinimizerPlugin()
+      new CssMinimizerPlugin(),
+      new ImageMinimizerPlugin({
+        minimizer: {
+          implementation: ImageMinimizerPlugin.squooshMinify,
+          options: {
+            encodeOptions: {
+              mozjpeg: {
+                quality: 60
+              }
+            }
+          }
+        }
+      })
     ]
   },
   plugins: [
@@ -53,6 +67,7 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css',
+      chunkFilename: 'css/[id].[contenthash].css',
       ignoreOrder: false
     })
   ]

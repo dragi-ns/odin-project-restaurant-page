@@ -1,0 +1,91 @@
+[data-active-tab="menu"] main {
+  background-image: url('../images/menu-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+[data-active-tab="menu"] #content {
+  color: var(--light-color);
+  background-color: rgba(51, 30, 3, .7);
+}
+
+.notification {
+  font-size: .9rem;
+  padding: .5rem 1rem;
+  text-align: center;
+  border-radius: 10px;
+  background-color: rgba(51, 30, 3, .6);
+}
+
+.title {
+  font-family: 'Dancing Script', cursive;
+  font-weight: bold;
+  text-decoration: underline;
+
+  -webkit-text-decoration-style: wavy;
+  -moz-text-decoration-style: wavy;
+  text-decoration-style: wavy;
+
+  -webkit-text-decoration-skip-ink: none;
+  -moz-text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none;
+
+  -webkit-text-underline-position: under;
+  -moz-text-underline-position: under;
+  text-underline-position: under;
+
+  text-shadow: 0 0 2px var(--dark-color);
+
+  font-size: 2rem;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  row-gap: .5rem;
+  padding: .5rem 1rem;
+  border-radius: 10px;
+  background-color: rgba(51, 30, 3, .6);
+  box-shadow: rgba(0, 0, 0, .2) 0px 1px 4px;
+}
+
+.menu-item-header {
+  display: flex;
+  align-items: flex-end;
+}
+
+.menu-item-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu-item-separator {
+  flex: 1;
+  border-bottom: .10rem dashed var(--light-color);
+}
+
+.menu-item-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .menu-item-title {
+    font-size: 1.8rem;
+  }  
+}

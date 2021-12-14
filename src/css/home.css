@@ -1,19 +1,16 @@
-main {
+[data-active-tab="home"] main {
   background-image: url('../images/home-background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
 }
 
-#content {
-  width: 100%;
-  height: 100%;
-  padding: 1.5rem 1rem;
+[data-active-tab="home"] #content {
+  color: var(--light-color);
   background-color: rgba(51, 30, 3, .6);
 }
 
-#content .container {
-  height: 100%;
+[data-active-tab="home"] #content .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,7 +55,6 @@ main {
 
 .restaurant-description {
   text-align: center;
-  animation: fade-in 1.5s linear forwards;
 }
 
 .restaurant-description p {
@@ -109,16 +105,6 @@ main {
   }
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
 @keyframes shake {
   0% { transform: translate(0, 0) }
   1.78571% { transform: translate(5px, 0) }
@@ -142,20 +128,20 @@ main {
 
 
 @media screen and (min-width: 992px) {
-    #content .container {
-      flex-direction: row-reverse;
-    }
+  [data-active-tab="home"] #content .container {
+    flex-direction: row-reverse;
+  }
 
-    .restaurant-illustration,
-    .restaurant-description {
-      flex: 1;
-    }
+  .restaurant-illustration,
+  .restaurant-description {
+    flex: 1;
+  }
 
-    .restaurant-illustration {
-      max-width: 650px;
-    }
+  .restaurant-illustration {
+    max-width: 650px;
+  }
 
-    .restaurant-description {
-      text-align: left;
-    }
+  .restaurant-description {
+    text-align: left;
+  }
 }
