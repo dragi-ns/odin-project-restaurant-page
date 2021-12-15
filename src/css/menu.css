@@ -16,7 +16,7 @@
   padding: .5rem 1rem;
   text-align: center;
   border-radius: 10px;
-  background-color: rgba(51, 30, 3, .6);
+  background-color: rgba(51, 30, 3, .8);
 }
 
 .title {
@@ -55,7 +55,7 @@
   row-gap: .5rem;
   padding: .5rem 1rem;
   border-radius: 10px;
-  background-color: rgba(51, 30, 3, .6);
+  background-color: rgba(51, 30, 3, .8);
   box-shadow: rgba(0, 0, 0, .2) 0px 1px 4px;
 }
 

@@ -1,13 +1,14 @@
 import '../css/main.css';
 import loadHomeContent from './home.js';
 import loadMenuContent from './menu.js';
+import loadContactContent from './contact.js';
 import { debounce } from './utils.js';
 
 const VALID_TAB_NAMES = ['home', 'menu', 'contact'];
 const tabs = Array.from(document.querySelectorAll('.tabs .tab'));
 let activeTab = null;
 tabs.forEach((tab) => {
-    if (tab.dataset.tabName === 'menu') {
+    if (tab.dataset.tabName === 'home') {
         activeTab = tab;
         tab.classList.add('active');
     }

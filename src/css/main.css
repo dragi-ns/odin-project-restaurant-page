@@ -20,6 +20,7 @@ a:not(.btn):active {
   color: #fefefe;
   text-decoration: none;
   transition: .5s color ease;
+  font-weight: bold;
 }
 
 a:not(.btn)::after {
@@ -54,7 +55,7 @@ footer {
 }
 
 header {
-  padding: 1rem .5rem;
+  padding: 1rem 0;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, 
               rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
@@ -62,6 +63,8 @@ header {
 .container {
   width: 100%;
   margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 header .container {
@@ -199,7 +202,8 @@ main {
 
 #content .container {
   height: 100%;
-  padding: 1.5rem 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 footer {
@@ -209,6 +213,8 @@ footer {
 
 @media screen and (min-width: 576px) {
   .container {
+    padding-left: 0;
+    padding-right: 0;
     max-width: 540px;
   }
 }

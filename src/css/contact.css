@@ -1,0 +1,140 @@
+[data-active-tab="contact"] #content .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-information,
+.map {
+  box-shadow: rgba(0, 0, 0, .2) 0px 1px 4px;
+}
+
+.contact-information {
+  padding: 1rem;
+  color: var(--light-color);
+  background-color: rgba(51, 30, 3, .8);
+}
+
+.contact-information .information {
+  display: flex;
+  gap: .5rem;
+}
+
+.contact-information .information .icon {
+  vertical-align: middle;
+}
+
+.contact-information .information:not(:last-child) {
+  margin-bottom: .5rem;
+}
+
+.contact-information .business-hours {
+  position: relative;
+}
+
+.contact-information .business-hours div {
+  width: 100%;
+}
+
+.contact-information .business-hours .text {
+  margin-bottom: .25rem;
+}
+
+.contact-information .business-hours .days {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.contact-information .business-hours .day {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-information .business-hours .day:not(:last-child) {
+  margin-bottom: .25rem;
+}
+
+.contact-information .business-hours .day.active {
+  color: var(--accent-color);
+}
+
+.contact-information .business-hours .day.active::before {
+  content: "\f061";
+  display: inline-block;
+  font-style: normal;
+  left: 0;
+  position: absolute;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900; 
+  width: 1.25em;
+  text-align: center;
+}
+
+.contact-information .email .text,
+.contact-information .facebook .text,
+.contact-information .instagram .text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.map,
+.map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.map {
+  max-width: 800px;
+  max-height: 800px;
+  min-height: 350px;
+}
+
+.map iframe {
+  border: none;
+}
+
+@media screen and (min-width: 315px) {
+  .contact-information .business-hours .day {
+    flex-direction: row;
+  }
+
+  .contact-information .business-hours .day .day-name {
+    flex: 1;
+  }
+
+  .contact-information .business-hours .day .working-hours {
+    text-align: right;
+  }
+
+  .contact-information .email .text,
+  .contact-information .facebook .text,
+  .contact-information .instagram .text {
+    overflow: initial;
+    text-overflow: initial;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contact-information {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  [data-active-tab="contact"] #content .container {
+    flex-direction: row;
+  }
+
+  .contact-information {
+    flex: 1;
+    align-self: flex-start;
+  }
+
+  .map {
+    flex: 2;
+  }
+}

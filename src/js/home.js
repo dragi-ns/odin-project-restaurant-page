@@ -13,7 +13,7 @@ function createRestaurantDescription() {
     restaurantDescriptionContainer.classList.add('restaurant-description');
 
     const description = document.createElement('p');
-    description.textContent = 'Restorančić inspirisan francuskom kuhinjom. Čuveni potaž, baget, mirisna peciva, sendviči, omleti. Stalna ponuda nekoliko tipičnih francuskih jela, dnevni meniji u mesnoj i biljnoj verziji, palačinke...';
+    description.textContent = 'Restorančić inspirisan francuskom kuhinjom. Uz nekoliko jela u stalnoj ponudi, svakodnevno menjamo meni (mesni i posni/veganski). Domaca atmosfera upotpunjena ukusnom i svezom hranom.';
     restaurantDescriptionContainer.appendChild(description);
 
     const callToAction = document.createElement('a');
