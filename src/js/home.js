@@ -1,31 +1,49 @@
 import '../css/home.css';
-import illustration from '../images/home-illustration.svg';
+import ILLUSTRATION from '../images/home-illustration.svg';
+import BUSINESS_DATA from '../data/business.json';
+import { createElement } from '../js/utils.js';
 
 function createRestaurantIllustration() {
-    const restaurantIllustration = document.createElement('div');
-    restaurantIllustration.classList.add('restaurant-illustration');
-    restaurantIllustration.innerHTML = illustration;
-    return restaurantIllustration;
+    const restaurantIllustrationContainer = createElement({
+        tagName: 'div',
+        classList: ['restaurant-illustration'],
+        content: ILLUSTRATION,
+        useInnerHTML: true
+    });
+    return restaurantIllustrationContainer;
 }
 
 function createRestaurantDescription() {
-    const restaurantDescriptionContainer = document.createElement('div');
-    restaurantDescriptionContainer.classList.add('restaurant-description');
+    const restaurantDescriptionContainer = createElement({
+        tagName: 'div',
+        classList: ['restaurant-description']
+    });
 
-    const description = document.createElement('p');
-    description.textContent = 'Restorančić inspirisan francuskom kuhinjom. Uz nekoliko jela u stalnoj ponudi, svakodnevno menjamo meni (mesni i posni/veganski). Domaca atmosfera upotpunjena ukusnom i svezom hranom.';
+    const description = createElement({
+        tagName: 'p',
+        content: BUSINESS_DATA.description
+    });
     restaurantDescriptionContainer.appendChild(description);
 
-    const callToAction = document.createElement('a');
-    callToAction.classList.add('btn', 'call-to-action');
-    callToAction.href = 'tel:0637062019';
+    const callToAction = createElement({
+        tagName: 'a',
+        classList: ['btn', 'call-to-action'],
+        attributes: {
+            href: `tel:${BUSINESS_DATA.phone}`
+        }
+    });
 
-    const callToActionIcon = document.createElement('span');
-    callToActionIcon.innerHTML = '<i class="fas fa-phone-alt"></i>';
+    const callToActionIcon = createElement({
+        tagName: 'span',
+        content: '<i class="fas fa-phone-alt"></i>',
+        useInnerHTML: true
+    });
     callToAction.appendChild(callToActionIcon);
 
-    const callToActionText = document.createElement('span');
-    callToActionText.textContent = 'Pozovite nas';
+    const callToActionText = createElement({
+        tagName: 'span',
+        content: 'Pozovite nas'
+    });
     callToAction.appendChild(callToActionText);
     restaurantDescriptionContainer.appendChild(callToAction);
 

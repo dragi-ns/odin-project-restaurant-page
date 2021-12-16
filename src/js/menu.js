@@ -1,95 +1,33 @@
 import '../css/menu.css';
-
-const MENU_DATA = [
-    {
-        category: 'Glavni meni',
-        items: [
-            {
-                title: 'Galska piletina',
-                description: 'Pileće belo (200g) u belom sosu sa medom i dižon senfom, pirinčem, šampinjonima, salata.',
-                price: 690
-            },
-            {
-                title: 'Beef Bourguignon (veliki)',
-                description: 'Juneći ribić (200g), šampinjoni (150g), široki rezanci, salata.',
-                price: 720,
-            },
-            {
-                title: 'Beef Bourguignon (mali)',
-                description: 'Juneći ribić (120g), šampinjoni, salata.',
-                price: 500
-            },
-            {
-                title: 'Rižoto sa šampinjonima (posno)',
-                description: 'Šampinjoni (300g), pirinač, salata.',
-                price: 420
-            }
-        ],
-    },
-    {
-        category: 'Salate',
-        items: [
-            {
-                title: 'La petite salata (150g)',
-                description: null,
-                price: 130
-            },
-            {
-                title: 'La petite salata (200g)',
-                description: null,
-                price: 150
-            },
-            {
-                title: 'Pileća salata',
-                description: null,
-                price: 320
-            },
-            {
-                title: 'Tuna salata',
-                description: null,
-                price: 400
-            },
-            {
-                title: 'Mediteranska salata',
-                description: null,
-                price: 330
-            },
-        ]
-    },
-    {
-        category: 'Sokovi',
-        items: [
-            {
-                title: 'Sok od zove (0.3l)',
-                description: null,
-                price: 100
-            },
-            {
-                title: 'Sok od nane (0.3l)',
-                description: null,
-                price: 100
-            }
-        ]
-    }
-];
+import BUSINESS_DATA from '../data/business.json';
+import MENU_DATA from '../data/menu.json';
+import { createElement } from '../js/utils.js';
 
 function createNotification() {
-    const notification = document.createElement('p');
-    notification.classList.add('notification');
-    notification.innerHTML = 'Ovo je demostracija menija. Ažurirani meni možete videti na <a href="https://www.instagram.com/francuskakuhinjica.ns/" target="_blank">@francuskakuhinjica.ns</a>';
+    const notification = createElement({
+        tagName: 'p',
+        classList: ['notification'],
+        content: `Ovo je demostracija menija. Ažurirani meni možete videti na <a href="https://www.instagram.com/${BUSINESS_DATA.instagram}/" target="_blank">${BUSINESS_DATA.instagram}</a>`,
+        useInnerHTML: true
+    });
     return notification;
 }
 
 function createCategoryHeading(category) {
-    const categoryHeading = document.createElement('h2');
-    categoryHeading.classList.add('title');
-    categoryHeading.innerHTML = `&nbsp;${category}&nbsp;`;
+    const categoryHeading = createElement({
+        tagName: 'h2',
+        classList: ['title'],
+        content: `&nbsp;${category}&nbsp;`,
+        useInnerHTML: true
+    });
     return categoryHeading;
 }
 
 function createMenuItems(items) {
-    const menuItems = document.createElement('div');
-    menuItems.classList.add('menu-items');
+    const menuItems = createElement({
+        tagName: 'div',
+        classList: ['menu-items']
+    });
 
     for (const item of items) {
         const menuItem = createMenuItem(item);
@@ -99,31 +37,43 @@ function createMenuItems(items) {
 }
 
 function createMenuItem({ title, description, price }) {
-    const menuItem = document.createElement('div');
-    menuItem.classList.add('menu-item');
+    const menuItem = createElement({
+        tagName: 'div',
+        classList: ['menu-item']
+    });
 
-    const menuItemHeader = document.createElement('div');
-    menuItemHeader.classList.add('menu-item-header');
+    const menuItemHeader = createElement({
+        tagName: 'div',
+        classList: ['menu-item-header']
+    });
 
-    const menuItemTitle = document.createElement('span');
-    menuItemTitle.classList.add('menu-item-title');
-    menuItemTitle.textContent = title;
+    const menuItemTitle = createElement({
+        tagName: 'span',
+        classList: ['menu-item-title'],
+        content: title
+    });
     menuItemHeader.appendChild(menuItemTitle);
 
-    const menuItemSeparator = document.createElement('span');
-    menuItemSeparator.classList.add('menu-item-separator');
+    const menuItemSeparator = createElement({
+        tagName: 'span',
+        classList: ['menu-item-separator']
+    });
     menuItemHeader.appendChild(menuItemSeparator);
 
-    const menuItemPrice = document.createElement('span');
-    menuItemPrice.classList.add('menu-item-price');
-    menuItemPrice.textContent = price;
+    const menuItemPrice = createElement({
+        tagName: 'span',
+        classList: ['menu-item-price'],
+        content: price
+    });
     menuItemHeader.appendChild(menuItemPrice);
     menuItem.appendChild(menuItemHeader);
 
     if (description) {
-        const menuItemDescription = document.createElement('div');
-        menuItemDescription.classList.add('menu-item-description');
-        menuItemDescription.textContent = description;
+        const menuItemDescription = createElement({
+            tagName: 'div',
+            classList: ['menu-item-description'],
+            content: description
+        });
         menuItem.appendChild(menuItemDescription);
     }
 

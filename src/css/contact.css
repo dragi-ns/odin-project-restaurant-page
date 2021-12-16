@@ -37,6 +37,7 @@
 }
 
 .contact-information .business-hours .text {
+  font-weight: bold;
   margin-bottom: .25rem;
 }
 
@@ -56,6 +57,7 @@
 }
 
 .contact-information .business-hours .day.active {
+  font-weight: bold;
   color: var(--accent-color);
 }
 

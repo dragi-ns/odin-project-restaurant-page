@@ -1,0 +1,19 @@
+{
+    "name": "La Petite Cuisine",
+    "description": "Restorančić inspirisan francuskom kuhinjom. Uz nekoliko jela u stalnoj ponudi, svakodnevno menjamo meni (mesni i posni/veganski). Domaća atmosfera upotpunjena ukusnom i svežom hranom.",
+    "address": "Branimira Ćosića 15, Novi Sad",
+    "phone": "063 7062019",
+    "email": "lapetitecuisine.ns@gmail.com",
+    "facebook": "francuskakuhinjica.ns",
+    "instagram": "francuskakuhinjica.ns",
+    "mapSource": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2808.6080356307707!2d19.830706875146827!3d45.25571835023952!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x64c49d05c05e617b!2sLa%20Petite%20Cuisine!5e0!3m2!1sen!2srs!4v1639509160127!5m2!1sen!2srs",
+    "hours": {
+        "ponedeljak": [11, 17],
+        "utorak": [11, 17],
+        "sreda": [11, 17],
+        "četvrtak": [11, 17],
+        "petak": [11, 17],
+        "subota": null,
+        "nedelja": null
+    }
+}

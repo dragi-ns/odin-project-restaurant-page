@@ -1,0 +1,72 @@
+[
+    {
+        "category": "Glavni meni",
+        "items": [
+            {
+                "title": "Galska piletina",
+                "description": "Pileće belo (200g) u belom sosu sa medom i dižon senfom, pirinčem, šampinjonima, salata.",
+                "price": 690
+            },
+            {
+                "title": "Beef Bourguignon (veliki)",
+                "description": "Juneći ribić (200g), šampinjoni (150g), široki rezanci, salata.",
+                "price": 720
+            },
+            {
+                "title": "Beef Bourguignon (mali)",
+                "description": "Juneći ribić (120g), šampinjoni, salata.",
+                "price": 500
+            },
+            {
+                "title": "Rižoto sa šampinjonima (posno)",
+                "description": "Šampinjoni (300g), pirinač, salata.",
+                "price": 420
+            }
+      ]
+    },
+    {
+        "category": "Salate",
+        "items": [
+            {
+                "title": "La petite salata (150g)",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar nunc sed ipsum euismod, vel pulvinar enim efficitur.",
+                "price": 130
+            },
+            {
+                "title": "La petite salata (200g)",
+                "description": "Maecenas accumsan elit eu mauris lobortis interdum.",
+                "price": 150
+            },
+            {
+                "title": "Pileća salata",
+                "description": "Phasellus facilisis imperdiet turpis ut tempor. Cras id ante purus.",
+                "price": 320
+            },
+            {
+                "title": "Tuna salata",
+                "description": "Suspendisse vitae accumsan purus, vel eleifend nisl.",
+                "price": 400
+            },
+            {
+                "title": "Mediteranska salata",
+                "description": "Ut non tincidunt libero. Sed laoreet ac elit nec porta. Nulla quam mauris.",
+                "price": 330
+            }
+        ]
+    },
+    {
+        "category": "Sokovi",
+        "items": [
+            {
+                "title": "Sok od zove (0.3l)",
+                "description": "Nam et quam congue, interdum justo eu, iaculis velit.",
+                "price": 100
+            },
+            {
+                "title": "Sok od nane (0.3l)",
+                "description": "Vivamus egestas quam in ligula elementum lacinia.",
+                "price": 100
+            }
+        ]
+    }
+]
