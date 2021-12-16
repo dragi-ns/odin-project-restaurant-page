@@ -5,28 +5,41 @@ import loadContactContent from './contact.js';
 import { debounce } from './utils.js';
 
 const VALID_TAB_NAMES = ['home', 'menu', 'contact'];
-const tabs = Array.from(document.querySelectorAll('.tabs .tab'));
 let activeTab = null;
-tabs.forEach((tab) => {
-    if (tab.dataset.tabName === 'home') {
-        activeTab = tab;
-        tab.classList.add('active');
-    }
-    tab.addEventListener('click', debounce(handleTabClick, 500, true));
-});
 const contentContainer = document.querySelector('#content .container');
-loadTabContent(activeTab.dataset.tabName);
+handleUrlHashChange();
 
-function handleTabClick(event) {
-    const selectedTab = event.currentTarget;
-    const tabName = selectedTab.dataset.tabName;
-    if (!tabName || !VALID_TAB_NAMES.includes(tabName) || tabName === activeTab.dataset.tabName) {
+function handleUrlHashChange() {
+    const urlHash = parseUrlHash();
+    if (!urlHash) {
         return;
     }
-    activeTab.classList.remove('active');
-    selectedTab.classList.add('active');
-    activeTab = selectedTab;
-    loadTabContent(tabName);
+    updateActiveTab(urlHash);
+}
+
+function parseUrlHash() {
+    const urlHash = window.location.hash.toLowerCase();
+    if (!urlHash) {
+        return '#home';
+    }
+    if (!VALID_TAB_NAMES.includes(urlHash.slice(1))) {
+        return null;
+    }
+    return urlHash;
+}
+
+function updateActiveTab(urlHash) {
+    if (activeTab) {
+        activeTab.classList.remove('active');
+    }
+
+    activeTab = document.querySelector(`.tabs .tab[href="${urlHash}"]`);
+    if (!activeTab) {
+        return;
+    }
+
+    activeTab.classList.add('active');
+    loadTabContent(urlHash.slice(1));
 }
 
 function loadTabContent(tabName) {
@@ -46,3 +59,5 @@ function loadTabContent(tabName) {
         // no default
     }
 }
+
+window.addEventListener('hashchange', handleUrlHashChange);

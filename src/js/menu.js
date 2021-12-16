@@ -7,7 +7,7 @@ function createNotification() {
     const notification = createElement({
         tagName: 'p',
         classList: ['notification'],
-        content: `Ovo je demostracija menija. Ažurirani meni možete videti na <a href="https://www.instagram.com/${BUSINESS_DATA.instagram}/" target="_blank">${BUSINESS_DATA.instagram}</a>`,
+        content: `Ovo je demostracija menija. Ažurirani meni možete videti na <a href="https://www.instagram.com/${BUSINESS_DATA.instagram}/" target="_blank">@${BUSINESS_DATA.instagram}</a>`,
         useInnerHTML: true
     });
     return notification;
