@@ -1,7 +1,4 @@
 import '../css/main.css';
-import loadHomeContent from './home.js';
-import loadMenuContent from './menu.js';
-import loadContactContent from './contact.js';
 
 const VALID_TAB_NAMES = ['home', 'menu', 'contact'];
 let activeTab = null;
@@ -41,22 +38,15 @@ function updateActiveTab(urlHash) {
     loadTabContent(urlHash.slice(1));
 }
 
-function loadTabContent(tabName) {
+async function loadTabContent(tabName) {
     document.body.dataset.activeTab = tabName;
     contentContainer.textContent = '';
 
-    switch (tabName) {
-        case 'home':
-            loadHomeContent(contentContainer);
-            break;
-        case 'menu':
-            loadMenuContent(contentContainer);
-            break;
-        case 'contact':
-            loadContactContent(contentContainer);
-            break;
-        // no default
-    }
+    // TODO: Add loading overlay
+    console.log('LOADING MODULE...');
+    const module = await import(`../js/${tabName}.js`);
+    console.log('FINISHED LOADING MODULE!');
+    module.default(contentContainer);
 }
 
 window.addEventListener('hashchange', handleUrlHashChange);
