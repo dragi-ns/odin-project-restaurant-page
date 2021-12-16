@@ -2,7 +2,6 @@ import '../css/main.css';
 import loadHomeContent from './home.js';
 import loadMenuContent from './menu.js';
 import loadContactContent from './contact.js';
-import { debounce } from './utils.js';
 
 const VALID_TAB_NAMES = ['home', 'menu', 'contact'];
 let activeTab = null;
