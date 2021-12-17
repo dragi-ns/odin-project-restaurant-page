@@ -31,7 +31,7 @@ a:not(.btn)::after {
   width: 0;
   height: .20rem;
   background-color: var(--accent-color);
-  transition: .5s all ease;
+  transition: all .5s ease;
 }
 
 a:not(.btn):hover::after {
@@ -130,7 +130,12 @@ header nav .btn {
   outline: none;
   border-top-right-radius: .6rem;
   border-bottom-left-radius: .6rem;
-  transition: all .5s;
+  transition: all .5s, outline 0s;
+}
+
+a:focus-visible,
+.btn:focus-visible {
+  outline: 4px solid #f9f9f9;
 }
 
 .btn::before,
