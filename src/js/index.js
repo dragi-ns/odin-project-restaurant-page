@@ -39,14 +39,22 @@ function updateActiveTab(urlHash) {
 }
 
 async function loadTabContent(tabName) {
-    document.body.dataset.activeTab = tabName;
-    contentContainer.textContent = '';
-
-    // TODO: Add loading overlay
-    console.log('LOADING MODULE...');
+    document.body.dataset.activeTab = '';
+    contentContainer.innerHTML = '<strong>UČITAVANJE...</strong>';
     const module = await import(`../js/${tabName}.js`);
-    console.log('FINISHED LOADING MODULE!');
+    contentContainer.innerHTML = '';
+    document.body.dataset.activeTab = tabName;
     module.default(contentContainer);
+    contentContainer.animate(
+        [
+            { opacity: 0 },
+            { opacity: 1 }
+        ], 
+        { 
+            duration: 500,
+            fill: 'forwards' 
+        }
+    );
 }
 
 window.addEventListener('hashchange', handleUrlHashChange);

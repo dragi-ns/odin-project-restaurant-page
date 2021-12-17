@@ -221,6 +221,12 @@ main {
   padding-bottom: 1.5rem;
 }
 
+[data-active-tab=""] #content .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 footer {
   text-align: center;
   padding: .75rem;

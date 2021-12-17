@@ -1,3 +1,7 @@
+[data-active-tab="menu"] {
+  background-color: black;
+}
+
 [data-active-tab="menu"] main {
   background-image: url('../images/menu-background.jpg');
   background-repeat: no-repeat;
