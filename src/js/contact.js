@@ -147,20 +147,23 @@ function formatWorkingHoursRange(workingHoursRange) {
 
 function formatBusinessStatus(dayName, hours) {
     const workingHoursRange = BUSINESS_DATA.hours[dayName];
+    if (workingHoursRange) {
+        if (workingHoursRange[0] - hours === 1) {
+            return 'Uskoro se otvara.';
+        }
 
-    if (workingHoursRange[0] - hours === 1) {
-        return 'Uskoro se otvara.';
+        if (workingHoursRange[1] - hours === 1) {
+            return 'Uskoro se zatvara.';
+        }
     }
-
-    if (workingHoursRange[1] - hours === 1) {
-        return 'Uskoro se zatvara.';
-    }
-
     return `Trenutno je ${isBusinessOpen(dayName, hours) ? 'otvoreno' : 'zatvoreno'}.`;
 }
 
 function isBusinessOpen(dayName, hours) {
     const workingHoursRange = BUSINESS_DATA.hours[dayName];
+    if (!workingHoursRange) {
+        return false;
+    }
     return workingHoursRange[0] <= hours && workingHoursRange[1] > hours;
 }
 
